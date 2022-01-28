@@ -1,4 +1,4 @@
-package maciej.kubis.carweb.vehicleModule.domain;
+package maciej.kubis.carweb.vehiclemodule.domain;
 
 public enum CarBrandEnum {
 

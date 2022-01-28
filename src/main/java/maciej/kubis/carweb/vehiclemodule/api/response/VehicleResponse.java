@@ -1,21 +1,16 @@
-package maciej.kubis.carweb.vehicleModule.api.request;
+package maciej.kubis.carweb.vehiclemodule.api.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.extern.jackson.Jacksonized;
-import maciej.kubis.carweb.vehicleModule.domain.CarBrandEnum;
+import lombok.*;
+import maciej.kubis.carweb.vehiclemodule.domain.CarBrandEnum;
 
 import java.util.UUID;
 
 @Data
-@Jacksonized
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class VehicleRequest {
-
+@ToString
+public class VehicleResponse {
     private UUID vehicleId;
     private String name;
     private CarBrandEnum carBrand;

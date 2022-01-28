@@ -1,6 +1,6 @@
-package maciej.kubis.carweb.vehicleModule.repository;
+package maciej.kubis.carweb.vehiclemodule.repository;
 
-import maciej.kubis.carweb.vehicleModule.domain.Vehicle;
+import maciej.kubis.carweb.vehiclemodule.domain.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
