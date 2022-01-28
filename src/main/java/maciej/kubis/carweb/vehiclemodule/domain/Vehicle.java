@@ -26,7 +26,7 @@ public class Vehicle {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "cartype", nullable = false, updatable = false)
-    private CarBrandEnum carType;
+    private CarTypeEnum carType;
 
     @Column(name = "picture", length = 400)
     private String picture;

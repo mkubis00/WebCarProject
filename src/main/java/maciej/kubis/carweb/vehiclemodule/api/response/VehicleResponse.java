@@ -2,6 +2,7 @@ package maciej.kubis.carweb.vehiclemodule.api.response;
 
 import lombok.*;
 import maciej.kubis.carweb.vehiclemodule.domain.CarBrandEnum;
+import maciej.kubis.carweb.vehiclemodule.domain.CarTypeEnum;
 
 import java.util.UUID;
 
@@ -14,7 +15,7 @@ public class VehicleResponse {
     private UUID vehicleId;
     private String name;
     private CarBrandEnum carBrand;
-    private CarBrandEnum carType;
+    private CarTypeEnum carType;
     private String picture;
 
     private float speed;
