@@ -15,15 +15,15 @@ public class VehicleMapper {
                 .carBrand(vehicleRequest.getCarBrand())
                 .carType(vehicleRequest.getCarType())
                 .picture(vehicleRequest.getPicture())
-                .speed(vehicleRequest.getSpeed())
-                .controllability(vehicleRequest.getControllability())
-                .acceleration(vehicleRequest.getAcceleration())
-                .braking(vehicleRequest.getBraking())
-                .offRoadDriving(vehicleRequest.getOffRoadDriving())
-                .power(vehicleRequest.getPower())
-                .torque(vehicleRequest.getTorque())
-                .weight(vehicleRequest.getWeight())
-                .engineCapacity(vehicleRequest.getEngineCapacity()).build();
+                .tuningTirePressure(vehicleRequest.getTuningTirePressure())
+                .tuningwheelAlignment(vehicleRequest.getTuningwheelAlignment())
+                .tuningStabilizers(vehicleRequest.getTuningStabilizers())
+                .tuningSprings(vehicleRequest.getTuningSprings())
+                .tuningSuspensionHeight(vehicleRequest.getTuningSuspensionHeight())
+                .tuningSuspensionStiffness(vehicleRequest.getTuningSuspensionStiffness())
+                .tuningBrakingForce(vehicleRequest.getTuningBrakingForce())
+                .tuningFrontDifferential(vehicleRequest.getTuningFrontDifferential())
+                .tuningRearDifferential(vehicleRequest.getTuningRearDifferential()).build();
     }
 
     public VehicleResponse toVehicleResponse(Vehicle vehicle) {
@@ -58,14 +58,14 @@ public class VehicleMapper {
                 .carBrand(updateVehicleRequest.getCarBrand())
                 .carType(updateVehicleRequest.getCarType())
                 .picture(updateVehicleRequest.getPicture())
-                .speed(updateVehicleRequest.getSpeed())
-                .controllability(updateVehicleRequest.getControllability())
-                .acceleration(updateVehicleRequest.getAcceleration())
-                .braking(updateVehicleRequest.getBraking())
-                .offRoadDriving(updateVehicleRequest.getOffRoadDriving())
-                .power(updateVehicleRequest.getPower())
-                .torque(updateVehicleRequest.getTorque())
-                .weight(updateVehicleRequest.getWeight())
-                .engineCapacity(updateVehicleRequest.getEngineCapacity()).build();
+                .tuningTirePressure(updateVehicleRequest.getTuningTirePressure())
+                .tuningwheelAlignment(updateVehicleRequest.getTuningwheelAlignment())
+                .tuningStabilizers(updateVehicleRequest.getTuningStabilizers())
+                .tuningSprings(updateVehicleRequest.getTuningSprings())
+                .tuningSuspensionHeight(updateVehicleRequest.getTuningSuspensionHeight())
+                .tuningSuspensionStiffness(updateVehicleRequest.getTuningSuspensionStiffness())
+                .tuningBrakingForce(updateVehicleRequest.getTuningBrakingForce())
+                .tuningFrontDifferential(updateVehicleRequest.getTuningFrontDifferential())
+                .tuningRearDifferential(updateVehicleRequest.getTuningRearDifferential()).build();
     }
 }
