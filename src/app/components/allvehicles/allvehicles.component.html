@@ -1,0 +1,38 @@
+<div class="grid-container">
+  <br><br>
+  <h1 class="mat-h1">Vehicles</h1>
+  <br>
+  <mat-grid-list cols={{cols}} rowHeight="350px">
+    <mat-grid-tile *ngFor="let vehicle of vehicles" [colspan]=1 [rowspan]=2>
+      <mat-card class="dashboard-card" id={{vehicle.vehicleId}}>
+        <mat-card-header>
+          <mat-card-title>
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <br>
+          <img class="vehiclePicture" src={{vehicle.picture}}>
+          <p class="vehicleInfo">{{vehicle.name}}</p>
+          <p class="vehicleInfo">{{vehicle.carBrand}}</p>
+          <p class="vehicleInfo">{{vehicle.carType}}</p>
+          <p class="vehicleInfo">{{vehicle.acceleration}}</p>
+          <p class="vehicleInfo">{{vehicle.speed}}</p>
+          <p class="vehicleInfo">{{vehicle.power}}</p>
+          <p class="vehicleInfo">{{vehicle.weight}}</p>
+          <p class="vehicleInfo">{{vehicle.offRoadDriving}}</p>
+          <p class="vehicleInfo">{{vehicle.braking}}</p>
+          <p class="vehicleInfo">{{vehicle.controllability}}</p>
+          <p class="vehicleInfo">{{vehicle.engineCapacity}}</p>
+          <p class="vehicleInfo">{{vehicle.torque}}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

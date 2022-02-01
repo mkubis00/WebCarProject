@@ -1,0 +1,98 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.mat-toolbar {
+  background: inherit;
+
+}
+
+.sidenav{
+  width: 200px;
+  border-right: none;
+  background: #0e6293;
+  border-radius: 10px;
+  padding: 16px;
+  align-items: center;
+  margin: 10px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+//////////////////////////////////////////////////////////////////////
+span {
+  color: #403e3e;
+}
+
+.mat-list-item {
+  color: #e2dbdb;
+  align-items: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.sidebarIcon {
+  color: #343333;
+}
+
+.mat-icon {
+  color: #e2dbdb;
+  margin-right: 2px;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebarIcon {
+  color: #504e4e;
+}
+
+mat-sidenav-content {
+  background-color: #e3dfdf;
+}
+
+.mat-sidenav-container {
+  background-color: #e3dfdf;
+}
+
+.menutext {
+  color: #e2dbdb;
+  position: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  //font-weight: bold;
+  font-size: 30px;
+}
+
+span {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.maintitle {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: bolder;
+}
+
+mat-toolbar {
+  height: 80px;
+}
+
+.registerButton{
+  background-color: #0e6293;
+  margin-right: 2vw;
+  margin-left: 1vw;
+}
+
+.loginregister-button-row {
+  float: right;
+  margin-left: 1vw;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

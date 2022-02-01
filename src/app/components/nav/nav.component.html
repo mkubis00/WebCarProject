@@ -1,0 +1,73 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="menutext">Menu</mat-toolbar>
+    <mat-divider></mat-divider>
+    <mat-nav-list class="matsidenav">
+      <a mat-list-item routerLink="">
+        <mat-icon aria-hidden="false" aria-label="home icon">
+          home</mat-icon>Home
+      </a>
+      <a mat-list-item routerLink="/allVehicles">
+        <mat-icon aria-hidden="false" aria-label="description icon">
+          description
+        </mat-icon>
+        All vehicles
+      </a>
+      <a mat-list-item routerLink="/addVehicle">
+        <mat-icon aria-hidden="false" aria-label="description icon">
+          upgrade
+        </mat-icon>
+        Add vehicle
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="#">
+        <mat-icon aria-hidden="false" aria-label="Profile icon">
+          manage_accounts
+        </mat-icon>
+        Profile
+      </a>
+      <a mat-list-item routerLink="#">
+        <mat-icon aria-hidden="false" aria-label="Favourite Vehicles icon">
+          favorite_border
+        </mat-icon>
+        My Vehicles
+      </a>
+      <a mat-list-item routerLink="#">
+        <mat-icon aria-hidden="false" aria-label="Favourite Vehicles icon">
+          question_answer
+        </mat-icon>
+        Chat
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="#">
+        <mat-icon aria-hidden="false" aria-label="Author icon">
+          account_circle
+        </mat-icon>
+        Author
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon class="sidebarIcon sideIcon" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="maintitle">CarWeb Application</span>
+      <span class="example-spacer"></span>
+      <div class="loginregister-button-row">
+        <button class="loginButton"mat-raised-button>Login</button>
+        <button class="registerButton" mat-raised-button color="primary">Register</button>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
