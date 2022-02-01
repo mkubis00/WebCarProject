@@ -18,6 +18,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { AddvehicleComponent } from './components/addvehicle/addvehicle.component'
+import {MatRadioModule} from '@angular/material/radio';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -44,6 +46,8 @@ import { AddvehicleComponent } from './components/addvehicle/addvehicle.componen
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatRadioModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
