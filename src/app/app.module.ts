@@ -20,6 +20,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AddvehicleComponent } from './components/addvehicle/addvehicle.component'
 import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { EditvehicleComponent } from './components/editvehicle/editvehicle.component';
+
 
 
 
@@ -29,6 +33,7 @@ import {MatInputModule} from '@angular/material/input';
     NavComponent,
     AllvehiclesComponent,
     AddvehicleComponent,
+    EditvehicleComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,8 @@ import {MatInputModule} from '@angular/material/input';
     MatMenuModule,
     MatRadioModule,
     MatInputModule,
+    MatStepperModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {Observable, Subscription} from "rxjs";
+
 
 
 @Injectable({
@@ -8,18 +9,46 @@ import {Observable} from "rxjs";
 })
 export class GetVehiclesService {
 
-  constructor(private httpClient: HttpClient) {
+  private apiAddress = "http://localhost:8080/api/v1/vehicle/";
+  status!: any;
+  helper!: String;
+  help!: any;
+  vehicleId!: String;
 
-  }
+  constructor(private httpClient: HttpClient) {}
 
-  public  getVehicle(): Observable<VehicleObject> {
-    return this.httpClient.get<VehicleObject>("http://localhost:8080/api/v1/vehicle/bfaa004b-74bd-4844-bc60-77dbd2957ce3");
-  }
 
   public getVehicles(): Observable<Array<VehicleObject>> {
-    return this.httpClient.get<Array<VehicleObject>>("http://localhost:8080/api/v1/vehicle");
+    return this.httpClient.get<Array<VehicleObject>>(this.apiAddress);
   }
+
+  public getVehicle(id: String): Observable<VehicleObject> {
+    return this.httpClient.get<VehicleObject>((this.apiAddress + id));
+  }
+
+  public deleteVehicle(id: String){
+    const endpoint = this.apiAddress + id;
+    return this.httpClient.delete(endpoint);
+  }
+
+  public setVehicleToEdit(id: String) {
+    this.vehicleId = id;
+  }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 export interface VehicleObject {
   acceleration: number;

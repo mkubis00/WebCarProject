@@ -11,26 +11,27 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item routerLink="/editVehicle/{{vehicle.vehicleId}}" (click)="editVehicle(vehicle)">Edit</button>
+              <button mat-menu-item (click)="deleteVehicle(vehicle)">Remove</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
           <br>
           <img class="vehiclePicture" src={{vehicle.picture}}>
-          <p class="vehicleInfo">{{vehicle.name}}</p>
-          <p class="vehicleInfo">{{vehicle.carBrand}}</p>
-          <p class="vehicleInfo">{{vehicle.carType}}</p>
-          <p class="vehicleInfo">{{vehicle.acceleration}}</p>
-          <p class="vehicleInfo">{{vehicle.speed}}</p>
-          <p class="vehicleInfo">{{vehicle.power}}</p>
-          <p class="vehicleInfo">{{vehicle.weight}}</p>
-          <p class="vehicleInfo">{{vehicle.offRoadDriving}}</p>
-          <p class="vehicleInfo">{{vehicle.braking}}</p>
-          <p class="vehicleInfo">{{vehicle.controllability}}</p>
-          <p class="vehicleInfo">{{vehicle.engineCapacity}}</p>
-          <p class="vehicleInfo">{{vehicle.torque}}</p>
+          <br><br>
+          <p class="vehicleInfo name">{{vehicle.name}}</p>
+          <p class="vehicleInfo carBrand">{{vehicle.carBrand}}</p>
+          <p class="vehicleInfo carType">{{vehicle.carType}}</p>
+          <p class="vehicleInfo acceleration">{{vehicle.acceleration}}</p>
+          <p class="vehicleInfo speed">{{vehicle.speed}}</p>
+          <p class="vehicleInfo power">{{vehicle.power}}</p>
+          <p class="vehicleInfo weight">{{vehicle.weight}}</p>
+          <p class="vehicleInfo offRoadDriving">{{vehicle.offRoadDriving}}</p>
+          <p class="vehicleInfo braking">{{vehicle.braking}}</p>
+          <p class="vehicleInfo controllAbility">{{vehicle.controllability}}</p>
+          <p class="vehicleInfo engineCapacity">{{vehicle.engineCapacity}}</p>
+          <p class="vehicleInfo torque">{{vehicle.torque}}</p>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

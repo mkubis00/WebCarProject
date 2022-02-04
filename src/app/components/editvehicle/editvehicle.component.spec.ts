@@ -7,16 +7,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
+import { EditvehicleComponent } from './editvehicle.component';
 
-import { AddvehicleComponent } from './addvehicle.component';
-
-describe('AddvehicleComponent', () => {
-  let component: AddvehicleComponent;
-  let fixture: ComponentFixture<AddvehicleComponent>;
+describe('EditvehicleComponent', () => {
+  let component: EditvehicleComponent;
+  let fixture: ComponentFixture<EditvehicleComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AddvehicleComponent],
+      declarations: [EditvehicleComponent],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
@@ -30,7 +29,7 @@ describe('AddvehicleComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddvehicleComponent);
+    fixture = TestBed.createComponent(EditvehicleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
