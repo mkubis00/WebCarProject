@@ -23,6 +23,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EditvehicleComponent } from './components/editvehicle/editvehicle.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 
@@ -55,6 +56,7 @@ import { EditvehicleComponent } from './components/editvehicle/editvehicle.compo
     MatInputModule,
     MatStepperModule,
     MatSnackBarModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

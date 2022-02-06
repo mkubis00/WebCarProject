@@ -76,6 +76,21 @@ export interface VehicleObject {
   weight: number;
 }
 
+export interface PostVehicleObject {
+  name: string;
+  tuningBrakingForce: number;
+  tuningFrontDifferential: number;
+  tuningRearDifferential: number;
+  tuningSprings: number;
+  tuningStabilizers: number;
+  tuningSuspensionHeight: number;
+  tuningSuspensionStiffness: number;
+  tuningTirePressure: number;
+  tuningwheelAlignment: number;
+  carBrand: CarBrand;
+  carType: CarType;
+}
+
 export enum CarBrand {
   ASTON_MARTIN, AUDI, BAC, BWM, BUICK, CHEVROLET,
   FERRARI, FORD, HOONIGAN, JAGUAR, KOENIGSEGG,

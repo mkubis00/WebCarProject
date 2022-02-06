@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AllvehiclesComponent} from "./components/allvehicles/allvehicles.component";
-import {AddvehicleComponent} from "./components/addvehicle/addvehicle.component";
 import {EditvehicleComponent} from "./components/editvehicle/editvehicle.component";
-
+import {AddvehicleComponent} from "./components/addvehicle/addvehicle.component";
 
 
 const routes: Routes = [
