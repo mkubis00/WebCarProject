@@ -17,15 +17,14 @@ import { AllvehiclesComponent } from './components/allvehicles/allvehicles.compo
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { AddvehicleComponent } from './components/addvehicle/addvehicle.component'
 import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { EditvehicleComponent } from './components/editvehicle/editvehicle.component';
+import {EditvehicleComponent} from './components/editvehicle/editvehicle.component';
 import {MatSliderModule} from '@angular/material/slider';
-
-
+import {AddvehicleComponent} from "./components/addvehicle/addvehicle.component";
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -57,6 +56,7 @@ import {MatSliderModule} from '@angular/material/slider';
     MatStepperModule,
     MatSnackBarModule,
     MatSliderModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
