@@ -17,14 +17,15 @@ import { AllvehiclesComponent } from './components/allvehicles/allvehicles.compo
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatInputModule} from '@angular/material/input';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {EditvehicleComponent} from './components/editvehicle/editvehicle.component';
-import {MatSliderModule} from '@angular/material/slider';
-import {AddvehicleComponent} from "./components/addvehicle/addvehicle.component";
-import {MatSelectModule} from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditvehicleComponent } from './components/editvehicle/editvehicle.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { AddvehicleComponent } from "./components/addvehicle/addvehicle.component";
+import { MatSelectModule } from '@angular/material/select';
+import { InputComponent } from './components/input/input.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {MatSelectModule} from '@angular/material/select';
     AllvehiclesComponent,
     AddvehicleComponent,
     EditvehicleComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
