@@ -8,39 +8,39 @@
           <br><br>
           <div class="test">Springs</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units"  (change)="setSprings($event)">
           </mat-slider>
           <div class="test">Braking Force</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setBrakingForce($event)">
           </mat-slider>
           <div class="test">Front Differential</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setFrontDifferential($event)">
           </mat-slider>
           <div class="test">Rear Differential</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setRearDifferential($event)">
           </mat-slider>
           <div class="test">Stabilizers</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setStabilizers($event)">
           </mat-slider>
           <div class="test">Suspension Height</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setSuspensionHeight($event)">
           </mat-slider>
           <div class="test">Suspension Stiffness</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setSuspensionStiffness($event)">
           </mat-slider>
           <div class="test">Tire Pressure</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setTirePressure($event)">
           </mat-slider>
           <div class="test">Wheel Alignment</div>
           <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units">
+                      min="0" max="10" aria-label="units" (change)="setWheelAlignment($event)">
           </mat-slider>
         </mat-card-content>
       </mat-card>
@@ -51,7 +51,7 @@
           <br><br><br><br>
           <mat-form-field appearance="fill">
             <mat-label>Car Brand</mat-label>
-            <mat-select>
+            <mat-select [(value)]="carBrand">
               <mat-option *ngFor="let carBrand of getBrandEnum() | keyvalue" [value]="carBrand.value">
                 {{carBrand.value}}
               </mat-option>
@@ -60,13 +60,12 @@
           <br><br><br>
           <mat-form-field appearance="fill">
             <mat-label>Car Type</mat-label>
-            <mat-select>
+            <mat-select [(value)]="carType">
               <mat-option *ngFor="let carType of getTypeEnum() | keyvalue" [value]="carType.value">
                 {{carType.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
-
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -77,13 +76,12 @@
           <form class="example-form">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Enter name" (keyup)="nameChange($event)">
+              <input matInput placeholder="Enter name" (keyup)="setName($event)">
             </mat-form-field>
-            {{name}}  {{picture}}
             <br><br>
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Picture Link</mat-label>
-              <input matInput placeholder="Enter picture link" (keyup)="pictureChange($event)">
+              <input matInput placeholder="Enter picture link" (keyup)="setPicture($event)">
             </mat-form-field>
           </form>
           <br>

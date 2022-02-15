@@ -2,6 +2,7 @@ import {Component, HostListener} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import {CarBrand, CarType, PostVehicleObject} from "../services/get-vehicles.service";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-addvehicle',
@@ -15,6 +16,17 @@ export class AddvehicleComponent {
   brands!: CarBrand;
   name!: string;
   picture!: string;
+  springs = 0;
+  brakingForce = 0;
+  frontDifferential = 0;
+  rearDifferential = 0;
+  stabilizers = 0;
+  suspensionHeight = 0;
+  suspesionStiffness = 0;
+  tirePressure = 0;
+  wheelAlignment = 0;
+  carBrand!: CarBrand;
+  carType!: CarType;
 
 
 
@@ -52,11 +64,49 @@ export class AddvehicleComponent {
     return CarType;
   }
 
-  nameChange(event: any){
+  setName(event: any){
     this.name = event.target.value;
   }
 
-  pictureChange(event: any){
+  setPicture(event: any){
     this.picture = event.target.value;
   }
+
+  setSprings(event: any) {
+    this.springs = event.value;
+  }
+
+  setBrakingForce(event: any) {
+    this.brakingForce = event.value;
+  }
+
+  setFrontDifferential(event: any) {
+    this.frontDifferential = event.value;
+  }
+
+  setRearDifferential(event: any) {
+    this.rearDifferential = event.value;
+  }
+
+  setStabilizers(event: any) {
+    this.stabilizers = event.value;
+  }
+
+  setSuspensionHeight(event: any) {
+    this.suspensionHeight = event.value;
+  }
+
+  setSuspensionStiffness(event: any) {
+    this.suspesionStiffness = event.value;
+  }
+
+  setTirePressure(event: any) {
+    this.tirePressure = event.value;
+  }
+
+  setWheelAlignment(event: any) {
+    this.wheelAlignment = event.value;
+  }
+
+
 }

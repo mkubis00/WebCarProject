@@ -25,7 +25,6 @@ import { EditvehicleComponent } from './components/editvehicle/editvehicle.compo
 import { MatSliderModule } from '@angular/material/slider';
 import { AddvehicleComponent } from "./components/addvehicle/addvehicle.component";
 import { MatSelectModule } from '@angular/material/select';
-import { InputComponent } from './components/input/input.component';
 
 
 @NgModule({
@@ -35,7 +34,6 @@ import { InputComponent } from './components/input/input.component';
     AllvehiclesComponent,
     AddvehicleComponent,
     EditvehicleComponent,
-    InputComponent,
   ],
   imports: [
     BrowserModule,
