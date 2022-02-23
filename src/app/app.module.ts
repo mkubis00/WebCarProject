@@ -25,6 +25,7 @@ import { EditvehicleComponent } from './components/editvehicle/editvehicle.compo
 import { MatSliderModule } from '@angular/material/slider';
 import { AddvehicleComponent } from "./components/addvehicle/addvehicle.component";
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSnackBarModule,
     MatSliderModule,
     MatSelectModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

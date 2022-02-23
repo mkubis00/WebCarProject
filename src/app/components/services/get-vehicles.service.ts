@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {Observable, Subscription} from "rxjs";
+import {catchError, Observable, Subscription} from "rxjs";
 
 
 
@@ -35,7 +35,16 @@ export class GetVehiclesService {
     this.vehicleId = id;
   }
 
-
+  public addVehicle(vehicle: any){
+    this.httpClient.post<any>(this.apiAddress, vehicle).subscribe({
+      next: data => {
+        console.log(data);
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
+  }
 }
 
 

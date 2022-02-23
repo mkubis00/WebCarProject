@@ -1,93 +1,175 @@
 <div class="grid-container">
   <h1 class="mat-h1">Add new vehicle</h1>
-  <mat-grid-list cols={{cols}} rowHeight="398px">
-
-    <mat-grid-tile [colspan]="1" [rowspan]="2">
-      <mat-card class="dashboard-card" >
-        <mat-card-content class="dashboard-card-content">
-          <br><br>
-          <div class="test">Springs</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units"  (change)="setSprings($event)">
-          </mat-slider>
-          <div class="test">Braking Force</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setBrakingForce($event)">
-          </mat-slider>
-          <div class="test">Front Differential</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setFrontDifferential($event)">
-          </mat-slider>
-          <div class="test">Rear Differential</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setRearDifferential($event)">
-          </mat-slider>
-          <div class="test">Stabilizers</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setStabilizers($event)">
-          </mat-slider>
-          <div class="test">Suspension Height</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setSuspensionHeight($event)">
-          </mat-slider>
-          <div class="test">Suspension Stiffness</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setSuspensionStiffness($event)">
-          </mat-slider>
-          <div class="test">Tire Pressure</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setTirePressure($event)">
-          </mat-slider>
-          <div class="test">Wheel Alignment</div>
-          <mat-slider thumbLabel tickInterval="0.01" step="0.01"
-                      min="0" max="10" aria-label="units" (change)="setWheelAlignment($event)">
-          </mat-slider>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
+  <mat-grid-list cols=1 rowHeight="1000px">
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card" >
         <mat-card-content class="dashboard-card-content">
-          <br><br><br><br>
-          <mat-form-field appearance="fill">
-            <mat-label>Car Brand</mat-label>
-            <mat-select [(value)]="carBrand">
-              <mat-option *ngFor="let carBrand of getBrandEnum() | keyvalue" [value]="carBrand.value">
-                {{carBrand.value}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br><br><br>
-          <mat-form-field appearance="fill">
-            <mat-label>Car Type</mat-label>
-            <mat-select [(value)]="carType">
-              <mat-option *ngFor="let carType of getTypeEnum() | keyvalue" [value]="carType.value">
-                {{carType.value}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="dashboard-card" >
-        <mat-card-content class="dashboard-card-content">
-          <br><br><br>
-          <form class="example-form">
+          <form class="add-vehicle-form"  #addvehicle="ngForm" (ngSubmit)="submitVehicle(addvehicle.value)">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Enter name" (keyup)="setName($event)">
-            </mat-form-field>
-            <br><br>
+                <input matInput ngModel name="name" placeholder="Enter name">
+              </mat-form-field>
+            <br>
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Picture Link</mat-label>
-              <input matInput placeholder="Enter picture link" (keyup)="setPicture($event)">
+                <input matInput ngModel name="picture" placeholder="Enter picture link" >
+              </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+              <mat-label>Car Type</mat-label>
+              <mat-select [(value)]="carType" ngModel name="carType">
+                <mat-option *ngFor="let carType of getTypeEnum() | keyvalue" [value]="carType.key">
+                  {{carType.value}}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+              <mat-label>Car Brand</mat-label>
+              <mat-select [(value)]="carBrand" ngModel name="carBrand">
+                <mat-option *ngFor="let carBrand of getBrandEnum() | keyvalue" [value]="carBrand.key">
+                  {{carBrand.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <div class="setValue">Springs</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningSprings" >
+            </mat-slider>
+            <div class="setValue">Braking Force</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningBrakingForce">
+            </mat-slider>
+            <div class="setValue">Front Differential</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningFrontDifferential">
+            </mat-slider>
+            <div class="setValue">Rear Differential</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningRearDifferential">
+            </mat-slider>
+            <div class="setValue">Stabilizers</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningStabilizers">
+            </mat-slider>
+            <div class="setValue">Suspension Height</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningSuspensionHeight">
+            </mat-slider>
+            <div class="setValue">Suspension Stiffness</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningSuspensionStiffness">
+            </mat-slider>
+            <div class="setValue">Tire Pressure</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningTirePressure">
+            </mat-slider>
+            <div class="setValue">Wheel Alignment</div>
+            <mat-slider thumbLabel tickInterval="0.01" step="0.01"
+              min="0" max="10" aria-label="units" ngModel name="tuningwheelAlignment">
+            </mat-slider>
+            <br>
+            <button mat-raised-button color="accent">Add vehicle</button>
           </form>
-          <br>
-          <button mat-raised-button color="accent">Add vehicle</button>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+
+
+
+            <!--<div class="grid-container">-->
+<!--  <h1 class="mat-h1">Add new vehicle</h1>-->
+<!--  <mat-grid-list cols={{cols}} rowHeight="398px">-->
+
+<!--    <mat-grid-tile [colspan]="1" [rowspan]="2">-->
+<!--      <mat-card class="dashboard-card" >-->
+<!--        <mat-card-content class="dashboard-card-content">-->
+<!--          <br><br>-->
+<!--          <div class="test">Springs</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units"  (change)="setSprings($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Braking Force</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setBrakingForce($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Front Differential</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setFrontDifferential($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Rear Differential</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setRearDifferential($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Stabilizers</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setStabilizers($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Suspension Height</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setSuspensionHeight($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Suspension Stiffness</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setSuspensionStiffness($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Tire Pressure</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setTirePressure($event)">-->
+<!--          </mat-slider>-->
+<!--          <div class="test">Wheel Alignment</div>-->
+<!--          <mat-slider thumbLabel tickInterval="0.01" step="0.01"-->
+<!--                      min="0" max="10" aria-label="units" (change)="setWheelAlignment($event)">-->
+<!--          </mat-slider>-->
+<!--        </mat-card-content>-->
+<!--      </mat-card>-->
+<!--    </mat-grid-tile>-->
+<!--    <mat-grid-tile [colspan]="1" [rowspan]="1">-->
+<!--      <mat-card class="dashboard-card" >-->
+<!--        <mat-card-content class="dashboard-card-content">-->
+<!--          <br><br><br><br>-->
+<!--          <mat-form-field appearance="fill">-->
+<!--            <mat-label>Car Brand</mat-label>-->
+<!--            <mat-select [(value)]="carBrand">-->
+<!--              <mat-option *ngFor="let carBrand of getBrandEnum() | keyvalue" [value]="carBrand.value">-->
+<!--                {{carBrand.value}}-->
+<!--              </mat-option>-->
+<!--            </mat-select>-->
+<!--          </mat-form-field>-->
+<!--          <br><br><br>-->
+<!--          <mat-form-field appearance="fill">-->
+<!--            <mat-label>Car Type</mat-label>-->
+<!--            <mat-select [(value)]="carType">-->
+<!--              <mat-option *ngFor="let carType of getTypeEnum() | keyvalue" [value]="carType.value">-->
+<!--                {{carType.value}}-->
+<!--              </mat-option>-->
+<!--            </mat-select>-->
+<!--          </mat-form-field>-->
+<!--        </mat-card-content>-->
+<!--      </mat-card>-->
+<!--    </mat-grid-tile>-->
+<!--    <mat-grid-tile [colspan]="1" [rowspan]="1">-->
+<!--      <mat-card class="dashboard-card" >-->
+<!--        <mat-card-content class="dashboard-card-content">-->
+<!--          <br><br><br>-->
+<!--          <form class="example-form">-->
+<!--            <mat-form-field class="example-full-width" appearance="fill">-->
+<!--              <mat-label>Name</mat-label>-->
+<!--              <input matInput placeholder="Enter name" (keyup)="setName($event)">-->
+<!--            </mat-form-field>-->
+<!--            <br><br>-->
+<!--            <mat-form-field class="example-full-width" appearance="fill">-->
+<!--              <mat-label>Picture Link</mat-label>-->
+<!--              <input matInput placeholder="Enter picture link" (keyup)="setPicture($event)">-->
+<!--            </mat-form-field>-->
+<!--          </form>-->
+<!--          <br>-->
+<!--          <button mat-raised-button color="accent">Add vehicle</button>-->
+<!--        </mat-card-content>-->
+<!--      </mat-card>-->
+<!--    </mat-grid-tile>-->
+<!--  </mat-grid-list>-->
+<!--</div>-->
