@@ -2,9 +2,12 @@ package maciej.kubis.carweb.vehiclemodule.api;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
 import maciej.kubis.carweb.vehiclemodule.api.request.VehicleRequest;
 import maciej.kubis.carweb.vehiclemodule.api.request.UpdateVehicleRequest;
+import maciej.kubis.carweb.vehiclemodule.api.request.VehicleTypePowerRequest;
 import maciej.kubis.carweb.vehiclemodule.api.response.VehicleResponse;
+import maciej.kubis.carweb.vehiclemodule.domain.CarBrandEnum;
 import maciej.kubis.carweb.vehiclemodule.service.VehicleService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +20,11 @@ import java.util.UUID;
 @RestController
 @Api(tags = "Vehicle")
 @RequestMapping("/api/v1/vehicle")
+@RequiredArgsConstructor
 public class VehicleApi {
 
     private final VehicleService vehicleService;
 
-    public VehicleApi(VehicleService vehicleService) {
-        this.vehicleService = vehicleService;
-    }
 
     @PostMapping
     @ApiOperation("Create vehicle")
@@ -65,5 +66,12 @@ public class VehicleApi {
     public ResponseEntity<VehicleResponse> updateById(@PathVariable UUID id, UpdateVehicleRequest updateVehicleRequest) {
         VehicleResponse productResponse = vehicleService.updateById(id, updateVehicleRequest);
         return ResponseEntity.status(HttpStatus.OK).body(productResponse);
+    }
+
+    @GetMapping("/brand/{id}")
+    @ApiOperation("Get vehicle by brand")
+    public ResponseEntity<List<VehicleResponse>> findVehiclesByBrand(@PathVariable CarBrandEnum id) {
+        List<VehicleResponse> vehicleResponses = vehicleService.findByBrand(id);
+        return ResponseEntity.status(HttpStatus.OK).body(vehicleResponses);
     }
 }
